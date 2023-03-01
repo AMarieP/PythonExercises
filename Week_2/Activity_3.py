@@ -26,6 +26,18 @@ class LinkedList:
                 node.next = Node(data = x)
                 node = node.next
 
+    def __repr__(self):
+        currentNode = self.head
+        nodesList = []
+        if currentNode == None:
+            return "There is no Data"
+        else:
+            while currentNode:
+                nodesList.append(str(currentNode.data))
+                currentNode = currentNode.next
+            nodesList.append("End of Nodes")
+            return " -> ".join(nodesList)
+
     #Sets the next node of the newNode to the current head, sets head to newNode
     def insertAtBeginning(self, newNode):
         if self.head == None:
@@ -49,13 +61,13 @@ class LinkedList:
     #Iterates through each node until it finds the specified node to delete
     #Sets the previous node's next to the node after the deleteNode
     #sets deleteNode to none
-    def deleteSpecifiedNode(self, deleteNode):
+    def deleteMiddleNode(self, deleteNode):
         if self.head == None:
             raise Exception("No nodes to remove")
         else:
             currentNode = self.head
             while currentNode:
-                if currentNode == deleteNode:
+                if currentNode.data == deleteNode:
                     break
                 prevNode = currentNode
                 currentNode = currentNode.next
@@ -71,6 +83,17 @@ class LinkedList:
             self.head = firstNode.next
 
 
-linkedList = LinkedList(['a', 'b', 'c', 1, 2, 3])
+testList = LinkedList(['a', 'b', 'c', 'd', 1 , 2 , 3])
+print(testList)
 
-print(linkedList)
+testList.insertAtBeginning(Node('beginning'))
+print(testList)
+
+testList.insertAtTheEnd(Node('end'))
+print(testList)
+
+testList.deleteMiddleNode('d')
+print(testList)
+
+testList.removeFirstNode()
+print(testList)
