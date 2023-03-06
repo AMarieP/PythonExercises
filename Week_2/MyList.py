@@ -3,7 +3,8 @@ running = True
 
 
 while running == True:
-    print("")
+    pass
+    
 
 
 shoppingList = []
