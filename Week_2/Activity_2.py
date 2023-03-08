@@ -2,8 +2,8 @@
 # removing the 0th, 4th and 5th elements
 
 sampleList = ['Red', 'Green', 'White', 'Black', 'Pink', 'Yellow']
+rangeList = [1, 3]
 
-newList = []
+newList = [(sampleList[1:4])]
 
-def removeListItem(list):
-    
+print(newList)
