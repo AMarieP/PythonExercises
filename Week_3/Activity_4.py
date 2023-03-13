@@ -32,22 +32,28 @@ class LinkedList:
             nodesList.append("End of Nodes")
             return " -> ".join(nodesList)
 
-    def fowardOrderData(self):
+    def reverseDataOrder(self):
+        currentNode = self.head
+        prevNode = None
+        nextNode = None
+        if currentNode == None:
+            return "There is no Data"
+        else:
+            while currentNode:
+                nextNode = currentNode.next
+                currentNode.next = prevNode
+                prevNode = currentNode
+                currentNode = nextNode
+            self.head = prevNode
+    
+    def printData(self):
         currentNode = self.head
         if currentNode == None:
             return "There is no Data"
         else:
-            print('The list in forward order is:')
             while currentNode:
                 print('Data = ' + currentNode.data)
                 currentNode = currentNode.next
-
-    def backwardsOrderData(self):
-        currentNode = self.head
-        if currentNode == None:
-            return "There is no Data"
-        else:
-            print('The list in backwards order is:')
 
 
 #Function for getting user data
@@ -65,4 +71,9 @@ def askUserInput(y):
 nodesAmount = int(input('Input the Number of Nodes: '))
 userList = LinkedList(askUserInput(nodesAmount))
 
-userList.fowardOrderData()
+print('\nThe list in forward order is:')
+userList.printData()
+
+print('\nThe list in backwards order is:')
+userList.reverseDataOrder()
+userList.printData()

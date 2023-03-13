@@ -35,7 +35,7 @@ class LinkedList:
             while currentNode:
                 nodesList.append(str(currentNode.data))
                 currentNode = currentNode.next
-            nodesList.append("End of Nodes")
+            nodesList.append("End of List")
             return " -> ".join(nodesList)
 
     #Sets the next node of the newNode to the current head, sets head to newNode
@@ -84,16 +84,16 @@ class LinkedList:
 
 
 testList = LinkedList(['a', 'b', 'c', 'd', 1 , 2 , 3])
-print(testList)
+print("Create my Linked List: \n" + str(testList) + "\n")
 
 testList.insertAtBeginning(Node('beginning'))
-print(testList)
+print("Add 'beginning' to the start of my Linked List: \n" + str(testList) + "\n")
 
 testList.insertAtTheEnd(Node('end'))
-print(testList)
+print("Add 'end' to the end of my Linked List: \n" + str(testList) + "\n")
 
 testList.deleteMiddleNode('d')
-print(testList)
+print("Delete node 'd' from my Linked List: \n" + str(testList) + "\n")
 
 testList.removeFirstNode()
-print(testList)
+print("Remove the first node from my Linked List: \n" + str(testList) + "\n")
