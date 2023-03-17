@@ -5,7 +5,7 @@
 # 3. Post-order traversing
 
 class BinarySearchNode:
-    def __init__(self, value):
+    def __init__(self, value = None):
         self.left = None
         self.right = None
         self.value = value
@@ -28,7 +28,7 @@ class BinarySearchNode:
                 return
             #If a left child does not exist then set the left node to the value
             else:
-                self.left = BinaryNode(value)
+                self.left = BinarySearchNode(value)
             return
         
         #If there is a right child then call insert on the right child, else set value to node's right child.
@@ -36,7 +36,7 @@ class BinarySearchNode:
             self.right.insert(value)
             return
         else:
-            self.right = BinaryNode(value)
+            self.right = BinarySearchNode(value)
     
     #Get the min and max values - simple recursive functions that move down the right/left of tree
     def getMinVal(self):
@@ -81,3 +81,37 @@ class BinarySearchNode:
         if self.value is not None:
             values.append(self.value)
         return values
+
+#My Data for the trees
+
+myDataOne = [44, 13, -8, 97, 16, 88, 3]
+
+myDataTwo = [-50, 12, 90, 100, 46, -32, 21, 68, 9, 11, 12, -6]
+
+binaryTreeOne = BinarySearchNode()
+
+binaryTreeTwo = BinarySearchNode()
+
+for x in myDataOne:
+    binaryTreeOne.insert(x)
+
+for x in myDataTwo:
+    binaryTreeTwo.insert(x)
+
+print("""Binary Tree One:
+Pre-Order:""")
+print(binaryTreeOne.preOrder([]))
+print("In-Order:")
+print(binaryTreeOne.inOrder([]))
+print("Post-Order:")
+print(binaryTreeOne.postOrder([]))
+
+print("""\nBinary Tree Two:
+Pre-Order:""")
+print(binaryTreeTwo.preOrder([]))
+print("In-Order:")
+print(binaryTreeTwo.inOrder([]))
+print("Post-Order:")
+print(binaryTreeTwo.postOrder([]))
+    
+
