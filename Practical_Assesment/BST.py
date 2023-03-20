@@ -2,6 +2,23 @@
 # Write a Python program that constructs a Binary Search Tree from given user input,
 #  and perform traversing operations.
 
+#DATA STRUCTURE ANALYSIS:
+# Why did you select that specific data structure?
+#     Binary Serach Tree was selected as it was required for the question. BST can maintain
+    # original order of data while allowing us to traverse in different orders and return the reordered data.
+    
+
+# How was that data structure suited to the task?
+    # Binary Search Tree is an abstract data type which works really quickly when sorting
+    # and retriving data. BST are used when we need to access or modify our data while
+    # maintaining the order, such as a preorder traversal which presents information in a 
+    # peordered way but the actual structre of the data (the binary serach tree itself) remains
+    # unchanged.
+
+# Could another structre be suited to the task?
+#     I don't think there is another data structure which can replicate a BST from my knowledge. 
+
+
 #Node class which creates the Nodes of the tree
 class Node:
     def __init__(self, value=None):
